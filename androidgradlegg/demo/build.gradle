@@ -19,5 +19,16 @@ allprojects {
 }
 
 task clean(type: Delete) {
+    // task configuration
+    group 'build'
+    description 'Clean build/ folder in root dir'
     delete rootProject.buildDir
+
+    // task action
+    doLast {
+        println "Directory `$rootDir${File.separator}build` has been removed"
+    }
 }
+
+// assemble任务执行前都会执行clean
+task('assemble').dependsOn('clean')
