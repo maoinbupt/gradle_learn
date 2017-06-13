@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "cn.bupt.newproject0819"
@@ -14,12 +14,50 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true // 移除没用到的资源和代码
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //第三方 progaurd 文件, 区分存储
+            proguardFile "proguard-rxjava.pro"
+            proguardFile "proguard-realm.pro"
+            proguardFile "proguard-retrofit.pro"
         }
-		debug {
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+
+        free {  // 对 src/free/ source set 进行配置 (flavor)
+        }
+        release { // 对 src/release/ source set 进行配置 (buildType)
+        }
+        freeFlyme {  // 对 src/freeFlyme/ 额外 source set 进行配置
+        }
+    }
+
+
+    flavorDimensions "channel", "type" // flavor 维度声明
+    productFlavors {
+        free {
+            dimension "type"   // type 维度的 free flavor
+            applicationIdSuffix ".free"  // 免费版包名后缀 .free
+        }
+        utlra {
+            dimension "type"
+            applicationIdSuffix ".ultra" // 旗舰版包名后缀 .ultra
+        }
+        flyme{  //flyme渠道
+            dimension "channel"
+        }
+        yyb{    //应用宝渠道
+            dimension "channel"
+        }
+
     }
 }
 
