@@ -17,9 +17,9 @@ android {
             shrinkResources true // 移除没用到的资源和代码
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             //第三方 progaurd 文件, 区分存储
-            proguardFile "proguard-rxjava.pro"
-            proguardFile "proguard-realm.pro"
-            proguardFile "proguard-retrofit.pro"
+//            proguardFile "proguard-rxjava.pro"
+//            proguardFile "proguard-realm.pro"
+//            proguardFile "proguard-retrofit.pro"
         }
         debug {
             minifyEnabled false
