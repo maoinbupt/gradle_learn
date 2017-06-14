@@ -1,4 +1,7 @@
+import com.sohu.sohuvideo.HelloGradle
+
 apply plugin: 'com.android.application'
+apply plugin: HelloGradle
 
 android {
     compileSdkVersion 21
@@ -58,6 +61,28 @@ android {
             dimension "channel"
         }
 
+    }
+}
+
+/**
+ * 通过gradle extension方式与插件通信
+ * 这样插件就可以通过调用者设置的值来执行task
+ * */
+greeting{
+    message = 'hello in MainProject'
+    greeter = 'MainProject caller'
+}
+
+/**
+ * 通过gradle container方式与插件通信
+ * 这样插件就可以对调用者一一say hey
+ * */
+greetings{
+    GaoFeng{
+        message "Hey"
+    }
+    GaoFeng2{
+        message "Hey","again!"
     }
 }
 
