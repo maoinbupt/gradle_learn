@@ -18,6 +18,14 @@ allprojects {
     }
 }
 
+subprojects{
+    apply plugin: 'com.android.application'
+    android{
+        compileSdkVersion 21
+        buildToolsVersion "25.0.0"
+    }
+}
+
 task clean(type: Delete) {
     // task configuration
     group 'build'
