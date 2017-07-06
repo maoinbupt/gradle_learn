@@ -7,4 +7,5 @@
 - [Gradle Android插件用户指南翻译](https://avatarqing.github.io/Gradle-Plugin-User-Guide-Chinese-Verision/)
 - [Android gradle 从入门到gg](https://www.slideshare.net/JweenLau/android-gradle-gg-0)
 - [gradle plugin-user-guide-cn](https://flyouting.gitbooks.io/gradle-plugin-user-guide-cn)
+- [Gradle Android Plugin 中文手册](https://www.gitbook.com/book/chaosleong/gradle-for-android)
 

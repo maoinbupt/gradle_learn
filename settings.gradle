@@ -1,4 +1,0 @@
-include ':MainProject'
-
-println("rootProjet name is : ${rootProject.name}")
-println("project MainProject name is : ${project(':MainProject').name}")
