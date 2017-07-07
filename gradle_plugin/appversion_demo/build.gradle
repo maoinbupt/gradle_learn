@@ -1,0 +1,42 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+subprojects{
+    apply plugin: 'com.android.application'
+    android{
+        compileSdkVersion 21
+        buildToolsVersion "25.0.0"
+    }
+}
+
+task clean(type: Delete) {
+    // task configuration
+    group 'build'
+    description 'Clean build/ folder in root dir'
+    delete rootProject.buildDir
+
+    // task action
+    doLast {
+        println "Directory `$rootDir${File.separator}build` has been removed"
+    }
+}
+
+// assemble任务执行前都会执行clean
+task('assemble').dependsOn('clean')

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.bupt.newproject0819">
+
+
+    <!-- 权限 -->
+    <!-- android.permission.ACCESS_WIFI_STATE - Allows applications to access information about Wi-Fi networks -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- android.permission.ACCESS_NETWORK_STATE - Allows applications to access information about networks. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- android.permission.INTERNET - Allows applications to open network sockets -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- android.permission.WRITE_EXTERNAL_STORAGE - Allows an application to write to external storage. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- android.permission.READ_EXTERNAL_STORAGE - Allows an application to read from external storage. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
+    <!-- android.permission.READ_PHONE_STATE - Allows read only access to phone state -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- android.permission.RECEIVE_BOOT_COMPLETED - Allows an application to receive the ACTION_BOOT_COMPLETED that is broadcast after the system finishes booting. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 地理位置权限,广告SDK使用 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 地理位置权限GPS,广告SDK使用 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 写settings权限 全屏播放中亮度调节时用到，修改字体大小也用到 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- android.permission.GET_TASKS - Allows an application to get information about the currently or recently running tasks -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- - 投影权限 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <!-- 赛程提醒通知 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 语音去广告的权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 语音去广告的权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 拨号的权限，点击客服电话时使用 -->
+    <!-- <uses-permission android:name="android.permission.CALL_PHONE" /> -->
+    <!-- 允许访问闪光灯 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <!-- 允许访问摄像头进行拍照 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- launcher3 读权限 -->
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <!-- 点击通知的设置按钮,隐藏通知栏 -->
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <!-- Don't-specific flags which allow us to run on any dpi screens. -->
+
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/BasicActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ProgressBarAct">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".H5GameActivity"></activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:theme="@style/BasicActivityTheme">
+            android:screenOrientation="portrait"
+        </activity>
+    </application>
+
+</manifest>
